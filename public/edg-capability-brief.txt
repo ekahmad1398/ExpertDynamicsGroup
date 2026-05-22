@@ -1,0 +1,15 @@
+Expert Dynamics Group
+Capability Brief
+
+Core Focus
+- Microsoft Dynamics 365 consulting
+- Azure architecture and cloud enablement
+- Power BI reporting and operational analytics
+- Power Platform workflow automation
+- Enterprise integrations and custom development
+- Ongoing support and solution optimization
+
+Business Profile
+Expert Dynamics Group helps organizations modernize systems, connect data, and improve operational visibility with Microsoft-first consulting and delivery.
+
+Primary delivery areas include ERP, CRM, cloud architecture, reporting, workflow automation, integration, and ongoing optimization support.
