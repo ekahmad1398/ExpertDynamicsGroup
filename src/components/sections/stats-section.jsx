@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { experienceHighlights } from "../../content/site-content";
 import { fadeUpItem } from "../ui/motion-variants";
@@ -7,7 +7,7 @@ import { SectionHeading } from "../ui/section-heading";
 
 export function StatsSection() {
   return (
-    <section id="experience" className="section-shell">
+    <section id="experience" className="section-shell deferred-section">
       <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal>
           <div className="surface-card-strong p-6 sm:p-7">
@@ -39,7 +39,7 @@ export function StatsSection() {
             const Icon = highlight.icon;
 
             return (
-              <motion.article key={highlight.title} className="glass-panel p-6" variants={fadeUpItem}>
+              <m.article key={highlight.title} className="glass-panel p-6" variants={fadeUpItem}>
                 <div className="flex items-start gap-4">
                   <div className="icon-chip shrink-0">
                     <Icon size={22} />
@@ -53,7 +53,7 @@ export function StatsSection() {
                     </p>
                   </div>
                 </div>
-              </motion.article>
+              </m.article>
             );
           })}
         </Stagger>

@@ -5,7 +5,7 @@ import { Reveal } from "../ui/reveal";
 
 export function CtaBanner() {
   return (
-    <section className="section-shell">
+    <section className="section-shell deferred-section">
       <Reveal>
         <div className="cta-banner">
           <div>

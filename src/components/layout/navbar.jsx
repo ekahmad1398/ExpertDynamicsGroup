@@ -1,4 +1,4 @@
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
@@ -95,7 +95,7 @@ export function Navbar() {
 
       <AnimatePresence>
         {mobileOpen ? (
-          <motion.div
+          <m.div
             id="mobile-navigation"
             className="mx-auto mt-3 max-w-7xl px-1 lg:hidden"
             animate={{ opacity: 1, y: 0 }}
@@ -127,7 +127,7 @@ export function Navbar() {
                 Privacy Policy
               </NavLink>
             </div>
-          </motion.div>
+          </m.div>
         ) : null}
       </AnimatePresence>
     </header>

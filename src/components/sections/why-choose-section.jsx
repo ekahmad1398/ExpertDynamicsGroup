@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { whyChoosePoints } from "../../content/site-content";
 import { fadeUpItem } from "../ui/motion-variants";
@@ -7,7 +7,7 @@ import { SectionHeading } from "../ui/section-heading";
 
 export function WhyChooseSection() {
   return (
-    <section className="section-shell">
+    <section className="section-shell deferred-section">
       <Reveal>
         <SectionHeading
           eyebrow="Why Choose Us"
@@ -21,7 +21,7 @@ export function WhyChooseSection() {
           const Icon = point.icon;
 
           return (
-            <motion.article key={point.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
+            <m.article key={point.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
               <div className="icon-chip">
                 <Icon size={22} />
               </div>
@@ -29,7 +29,7 @@ export function WhyChooseSection() {
                 {point.title}
               </h3>
               <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">{point.text}</p>
-            </motion.article>
+            </m.article>
           );
         })}
       </Stagger>

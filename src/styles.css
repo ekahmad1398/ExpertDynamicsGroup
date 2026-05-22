@@ -206,6 +206,11 @@ textarea {
   }
 }
 
+.deferred-section {
+  content-visibility: auto;
+  contain-intrinsic-size: 960px;
+}
+
 @media (min-width: 1024px) {
   .section-shell {
     padding-inline: 2rem;

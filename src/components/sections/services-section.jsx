@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 
 import { services } from "../../content/site-content";
 import { fadeUpItem } from "../ui/motion-variants";
@@ -7,7 +7,7 @@ import { SectionHeading } from "../ui/section-heading";
 
 export function ServicesSection() {
   return (
-    <section id="services" className="section-shell">
+    <section id="services" className="section-shell deferred-section">
       <Reveal>
         <SectionHeading
           eyebrow="Services"
@@ -21,7 +21,7 @@ export function ServicesSection() {
           const Icon = service.icon;
 
           return (
-            <motion.article key={service.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
+            <m.article key={service.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
               <div className="icon-chip">
                 <Icon size={24} />
               </div>
@@ -31,7 +31,7 @@ export function ServicesSection() {
               <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
                 {service.description}
               </p>
-            </motion.article>
+            </m.article>
           );
         })}
       </Stagger>

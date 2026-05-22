@@ -1,4 +1,4 @@
-import { motion, useReducedMotion } from "framer-motion";
+import { m, useReducedMotion } from "framer-motion";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -14,7 +14,7 @@ export function Reveal({
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial={
         prefersReducedMotion
@@ -34,7 +34,7 @@ export function Reveal({
       whileInView={{ opacity: 1, x: 0, y: 0 }}
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }
 
@@ -49,7 +49,7 @@ export function Stagger({
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <motion.div
+    <m.div
       className={className}
       initial="hidden"
       variants={{
@@ -65,6 +65,6 @@ export function Stagger({
       whileInView="visible"
     >
       {children}
-    </motion.div>
+    </m.div>
   );
 }

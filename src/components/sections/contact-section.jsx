@@ -54,7 +54,7 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contact" className="section-shell">
+    <section id="contact" className="section-shell deferred-section">
       <div className="grid gap-6 lg:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
           <div className="surface-card-strong h-full p-6 sm:p-7">

@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { FiArrowRight, FiDownload, FiPlayCircle } from "react-icons/fi";
 
 import { heroStats, siteMeta, trustItems } from "../../content/site-content";
@@ -34,10 +34,10 @@ export function HeroSection() {
 
           <Stagger className="grid gap-4 sm:grid-cols-3" delayChildren={0.15}>
             {heroStats.map((stat) => (
-              <motion.div key={stat.label} className="surface-card p-5" variants={fadeUpItem}>
+              <m.div key={stat.label} className="surface-card p-5" variants={fadeUpItem}>
                 <p className="text-2xl font-semibold text-[color:var(--text-main)]">{stat.value}</p>
                 <p className="mt-2 text-sm leading-6 text-[color:var(--text-muted)]">{stat.label}</p>
-              </motion.div>
+              </m.div>
             ))}
           </Stagger>
         </div>
