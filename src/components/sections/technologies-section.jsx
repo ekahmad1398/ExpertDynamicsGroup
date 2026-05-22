@@ -1,7 +1,4 @@
-import { m } from "framer-motion";
-
 import { technologyGroups } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 import { SectionHeading } from "../ui/section-heading";
 
@@ -22,7 +19,7 @@ export function TechnologiesSection() {
             const Icon = group.icon;
 
             return (
-              <m.article key={group.title} className="glass-panel p-6" variants={fadeUpItem}>
+              <article key={group.title} className="glass-panel p-6">
                 <div className="flex items-start gap-4">
                   <div className="icon-chip shrink-0">
                     <Icon size={22} />
@@ -43,7 +40,7 @@ export function TechnologiesSection() {
                     </div>
                   </div>
                 </div>
-              </m.article>
+              </article>
             );
           })}
         </Stagger>

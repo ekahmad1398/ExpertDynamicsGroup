@@ -1,4 +1,3 @@
-import { AnimatePresence, m } from "framer-motion";
 import { useEffect, useState } from "react";
 import { FiArrowUpRight, FiMenu, FiX } from "react-icons/fi";
 import { Link, NavLink } from "react-router-dom";
@@ -92,44 +91,38 @@ export function Navbar() {
           </div>
         </div>
       </div>
-
-      <AnimatePresence>
-        {mobileOpen ? (
-          <m.div
-            id="mobile-navigation"
-            className="mx-auto mt-3 max-w-7xl px-1 lg:hidden"
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -8 }}
-            initial={{ opacity: 0, y: -8 }}
-            transition={{ duration: 0.24 }}
-          >
-            <div className="glass-panel flex flex-col gap-2 p-3">
-              <div className="rounded-[1.2rem] border border-[color:var(--border-soft)] bg-[color:var(--surface-faint)] px-4 py-3">
-                <p className="nav-kicker">Microsoft Consulting</p>
-                <p className="mt-2 text-sm leading-6 text-[color:var(--text-muted)]">
-                  Dynamics 365, Azure, reporting, automation, and integration delivery.
-                </p>
-              </div>
-              {navLinks.map((link) => (
-                <a
-                  key={link.id}
-                  href={`/#${link.id}`}
-                  className="mobile-nav-link"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {link.label}
-                </a>
-              ))}
-              <a href="/#contact" className="primary-button mt-2 px-4 py-3 text-center">
-                Contact Us
-              </a>
-              <NavLink className="secondary-button mt-2 px-4 py-3 text-center" to="/privacy-policy">
-                Privacy Policy
-              </NavLink>
-            </div>
-          </m.div>
-        ) : null}
-      </AnimatePresence>
+      <div
+        id="mobile-navigation"
+        className={`mx-auto mt-3 max-w-7xl px-1 transition-all duration-300 lg:hidden ${
+          mobileOpen ? "pointer-events-auto translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0"
+        }`}
+        aria-hidden={!mobileOpen}
+      >
+        <div className="glass-panel flex flex-col gap-2 p-3">
+          <div className="rounded-[1.2rem] border border-[color:var(--border-soft)] bg-[color:var(--surface-faint)] px-4 py-3">
+            <p className="nav-kicker">Microsoft Consulting</p>
+            <p className="mt-2 text-sm leading-6 text-[color:var(--text-muted)]">
+              Dynamics 365, Azure, reporting, automation, and integration delivery.
+            </p>
+          </div>
+          {navLinks.map((link) => (
+            <a
+              key={link.id}
+              href={`/#${link.id}`}
+              className="mobile-nav-link"
+              onClick={() => setMobileOpen(false)}
+            >
+              {link.label}
+            </a>
+          ))}
+          <a href="/#contact" className="primary-button mt-2 px-4 py-3 text-center">
+            Contact Us
+          </a>
+          <NavLink className="secondary-button mt-2 px-4 py-3 text-center" to="/privacy-policy">
+            Privacy Policy
+          </NavLink>
+        </div>
+      </div>
     </header>
   );
 }

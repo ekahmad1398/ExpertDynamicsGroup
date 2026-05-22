@@ -1,7 +1,4 @@
-import { m } from "framer-motion";
-
 import { experienceHighlights } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 import { SectionHeading } from "../ui/section-heading";
 
@@ -39,7 +36,7 @@ export function StatsSection() {
             const Icon = highlight.icon;
 
             return (
-              <m.article key={highlight.title} className="glass-panel p-6" variants={fadeUpItem}>
+              <article key={highlight.title} className="glass-panel p-6">
                 <div className="flex items-start gap-4">
                   <div className="icon-chip shrink-0">
                     <Icon size={22} />
@@ -53,7 +50,7 @@ export function StatsSection() {
                     </p>
                   </div>
                 </div>
-              </m.article>
+              </article>
             );
           })}
         </Stagger>

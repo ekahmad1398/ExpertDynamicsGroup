@@ -1,7 +1,4 @@
-import { m } from "framer-motion";
-
 import { services } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 import { SectionHeading } from "../ui/section-heading";
 
@@ -21,7 +18,7 @@ export function ServicesSection() {
           const Icon = service.icon;
 
           return (
-            <m.article key={service.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
+            <article key={service.title} className="surface-card interactive-lift p-6">
               <div className="icon-chip">
                 <Icon size={24} />
               </div>
@@ -31,7 +28,7 @@ export function ServicesSection() {
               <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">
                 {service.description}
               </p>
-            </m.article>
+            </article>
           );
         })}
       </Stagger>

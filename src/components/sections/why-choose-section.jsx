@@ -1,7 +1,4 @@
-import { m } from "framer-motion";
-
 import { whyChoosePoints } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 import { SectionHeading } from "../ui/section-heading";
 
@@ -21,7 +18,7 @@ export function WhyChooseSection() {
           const Icon = point.icon;
 
           return (
-            <m.article key={point.title} className="surface-card interactive-lift p-6" variants={fadeUpItem}>
+            <article key={point.title} className="surface-card interactive-lift p-6">
               <div className="icon-chip">
                 <Icon size={22} />
               </div>
@@ -29,7 +26,7 @@ export function WhyChooseSection() {
                 {point.title}
               </h3>
               <p className="mt-4 text-sm leading-7 text-[color:var(--text-muted)]">{point.text}</p>
-            </m.article>
+            </article>
           );
         })}
       </Stagger>

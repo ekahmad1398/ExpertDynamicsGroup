@@ -1,7 +1,4 @@
-import { m } from "framer-motion";
-
 import { solutions } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 import { SectionHeading } from "../ui/section-heading";
 
@@ -22,7 +19,7 @@ export function SolutionsSection() {
           const Icon = solution.icon;
 
           return (
-            <m.article key={solution.title} className="surface-card interactive-lift p-6 sm:p-7" variants={fadeUpItem}>
+            <article key={solution.title} className="surface-card interactive-lift p-6 sm:p-7">
               <div className="flex items-start gap-4">
                 <div className="icon-chip shrink-0">
                   <Icon size={22} />
@@ -36,7 +33,7 @@ export function SolutionsSection() {
                   </p>
                 </div>
               </div>
-            </m.article>
+            </article>
           );
         })}
       </Stagger>

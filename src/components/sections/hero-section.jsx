@@ -1,8 +1,6 @@
-import { m } from "framer-motion";
 import { FiArrowRight, FiDownload, FiPlayCircle } from "react-icons/fi";
 
 import { heroStats, siteMeta, trustItems } from "../../content/site-content";
-import { fadeUpItem } from "../ui/motion-variants";
 import { Reveal, Stagger } from "../ui/reveal";
 
 export function HeroSection() {
@@ -34,10 +32,10 @@ export function HeroSection() {
 
           <Stagger className="grid gap-4 sm:grid-cols-3" delayChildren={0.15}>
             {heroStats.map((stat) => (
-              <m.div key={stat.label} className="surface-card p-5" variants={fadeUpItem}>
+              <div key={stat.label} className="surface-card p-5">
                 <p className="text-2xl font-semibold text-[color:var(--text-main)]">{stat.value}</p>
                 <p className="mt-2 text-sm leading-6 text-[color:var(--text-muted)]">{stat.label}</p>
-              </m.div>
+              </div>
             ))}
           </Stagger>
         </div>

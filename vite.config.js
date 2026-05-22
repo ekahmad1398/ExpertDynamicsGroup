@@ -12,10 +12,6 @@ export default defineConfig({
             return undefined;
           }
 
-          if (id.includes("framer-motion")) {
-            return "motion-vendor";
-          }
-
           if (id.includes("react-icons")) {
             return "icons-vendor";
           }
