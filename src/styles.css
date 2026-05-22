@@ -242,12 +242,14 @@ textarea {
 
 .dark .nav-shell,
 .dark .nav-shell-scrolled {
-  background: rgba(17, 31, 58, 0.9);
-  border-color: rgba(173, 201, 234, 0.14);
+  background: linear-gradient(180deg, rgba(20, 38, 70, 0.94), rgba(14, 28, 52, 0.96));
+  border-color: rgba(89, 199, 216, 0.12);
+  box-shadow: 0 16px 34px rgba(2, 10, 24, 0.24);
 }
 
 .dark .nav-shell-scrolled {
-  background: rgba(19, 35, 63, 0.98);
+  background: linear-gradient(180deg, rgba(23, 41, 74, 0.98), rgba(15, 29, 54, 0.98));
+  border-color: rgba(89, 199, 216, 0.18);
 }
 
 .glass-panel,
@@ -405,6 +407,13 @@ textarea {
   box-shadow: 0 18px 38px rgba(15, 30, 74, 0.18);
 }
 
+.dark .primary-button,
+.dark .cta-button-primary {
+  border-color: rgba(89, 199, 216, 0.22);
+  background: linear-gradient(135deg, #17386b 0%, #2daec6 100%);
+  box-shadow: 0 18px 38px rgba(2, 10, 24, 0.24);
+}
+
 .secondary-button,
 .cta-button-secondary {
   border: 1px solid var(--border-soft);
@@ -449,6 +458,10 @@ textarea {
   font-weight: 600;
 }
 
+.dark .nav-link {
+  color: rgba(232, 239, 255, 0.82);
+}
+
 .nav-link:hover,
 .mobile-nav-link:hover,
 .primary-button:hover,
@@ -462,6 +475,11 @@ textarea {
 .nav-link:hover {
   color: var(--text-main);
   background: rgba(31, 169, 200, 0.1);
+}
+
+.dark .nav-link:hover {
+  color: #f8fbff;
+  background: rgba(89, 199, 216, 0.12);
 }
 
 .mobile-nav-link {
@@ -629,11 +647,30 @@ textarea {
   color: var(--text-soft);
 }
 
+.dark .field-input {
+  border-color: rgba(173, 201, 234, 0.14);
+  background: linear-gradient(180deg, rgba(24, 43, 77, 0.96), rgba(14, 28, 52, 0.94));
+  box-shadow: inset 0 0 0 1px rgba(173, 201, 234, 0.04);
+  color: #f3f8ff;
+}
+
+.dark .field-input::placeholder {
+  color: rgba(195, 211, 234, 0.48);
+}
+
 .field-input:focus {
   border-color: var(--border-strong);
   background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 0 0 4px rgba(31, 169, 200, 0.1);
   outline: none;
+}
+
+.dark .field-input:focus {
+  border-color: rgba(89, 199, 216, 0.28);
+  background: linear-gradient(180deg, rgba(28, 49, 86, 0.98), rgba(18, 35, 64, 0.96));
+  box-shadow:
+    inset 0 0 0 1px rgba(173, 201, 234, 0.05),
+    0 0 0 4px rgba(89, 199, 216, 0.12);
 }
 
 .contact-map-panel {

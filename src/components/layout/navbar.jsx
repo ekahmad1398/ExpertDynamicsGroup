@@ -71,7 +71,7 @@ export function Navbar() {
 
           <div className="hidden items-center gap-3 lg:flex">
             <ThemeToggle />
-            <a href="/#contact" className="primary-button px-4 py-2.5">
+            <a href="/#contact" className="primary-button whitespace-nowrap px-5 py-2.5">
               Contact Us
               <FiArrowUpRight size={15} />
             </a>
