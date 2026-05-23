@@ -6,7 +6,7 @@ import { Reveal, Stagger } from "../ui/reveal";
 export function HeroSection() {
   return (
     <section id="hero" className="section-shell pt-16 sm:pt-20">
-      <div className="grid items-center gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
+      <div className="grid items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-10">
         <div className="space-y-8">
           <Reveal>
             <span className="hero-eyebrow-pill">

@@ -5,7 +5,7 @@ import { SectionHeading } from "../ui/section-heading";
 export function TechnologiesSection() {
   return (
     <section id="technologies" className="section-shell deferred-section">
-      <div className="grid gap-8 lg:grid-cols-[0.88fr_1.12fr]">
+      <div className="grid items-start gap-8 lg:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
           <SectionHeading
             eyebrow="Capabilities"

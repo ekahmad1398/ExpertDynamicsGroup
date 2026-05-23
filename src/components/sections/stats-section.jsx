@@ -5,7 +5,7 @@ import { SectionHeading } from "../ui/section-heading";
 export function StatsSection() {
   return (
     <section id="experience" className="section-shell deferred-section">
-      <div className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="grid items-start gap-6 lg:grid-cols-[0.95fr_1.05fr]">
         <Reveal>
           <div className="surface-card-strong p-6 sm:p-7">
             <SectionHeading

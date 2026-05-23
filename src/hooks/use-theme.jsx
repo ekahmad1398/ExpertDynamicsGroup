@@ -1,7 +1,24 @@
 /* eslint-disable react-refresh/only-export-components */
-import { createContext, useContext, useEffect, useMemo, useState } from "react";
+import {
+  createContext,
+  startTransition,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const ThemeContext = createContext(null);
+
+function applyTheme(theme) {
+  const root = document.documentElement;
+
+  root.classList.toggle("dark", theme === "dark");
+  root.dataset.theme = theme;
+  root.style.colorScheme = theme;
+}
 
 function getPreferredTheme() {
   if (typeof window === "undefined") {
@@ -19,12 +36,33 @@ function getPreferredTheme() {
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(getPreferredTheme);
+  const transitionFrameRef = useRef(0);
 
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", theme === "dark");
-    document.documentElement.dataset.theme = theme;
+  useLayoutEffect(() => {
+    applyTheme(theme);
     window.localStorage.setItem("edg-theme", theme);
+
+    return () => {
+      window.cancelAnimationFrame(transitionFrameRef.current);
+    };
   }, [theme]);
+
+  function scheduleThemeChange(nextTheme) {
+    const root = document.documentElement;
+
+    root.classList.add("theme-switching");
+    window.cancelAnimationFrame(transitionFrameRef.current);
+
+    startTransition(() => {
+      setTheme(nextTheme);
+    });
+
+    transitionFrameRef.current = window.requestAnimationFrame(() => {
+      transitionFrameRef.current = window.requestAnimationFrame(() => {
+        root.classList.remove("theme-switching");
+      });
+    });
+  }
 
   useEffect(() => {
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
@@ -33,7 +71,7 @@ export function ThemeProvider({ children }) {
       const storedTheme = window.localStorage.getItem("edg-theme");
 
       if (!storedTheme) {
-        setTheme(event.matches ? "dark" : "light");
+        scheduleThemeChange(event.matches ? "dark" : "light");
       }
     }
 
@@ -45,7 +83,7 @@ export function ThemeProvider({ children }) {
   const value = useMemo(
     () => ({
       theme,
-      toggleTheme: () => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark")),
+      toggleTheme: () => scheduleThemeChange(theme === "dark" ? "light" : "dark"),
     }),
     [theme],
   );
