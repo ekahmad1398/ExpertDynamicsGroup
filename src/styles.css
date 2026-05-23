@@ -193,21 +193,29 @@ textarea {
   width: 100%;
   max-width: 82rem;
   padding-inline: 1rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3.25rem;
+  padding-bottom: 3.25rem;
+}
+
+.section-shell + .section-shell {
+  padding-top: 1.25rem;
 }
 
 @media (min-width: 640px) {
   .section-shell {
     padding-inline: 1.5rem;
-    padding-top: 4.75rem;
-    padding-bottom: 4.75rem;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .section-shell + .section-shell {
+    padding-top: 1.5rem;
   }
 }
 
 .deferred-section {
   content-visibility: auto;
-  contain-intrinsic-size: 960px;
+  contain-intrinsic-size: auto 720px;
 }
 
 [data-reveal] {
@@ -238,8 +246,17 @@ textarea {
 @media (min-width: 1024px) {
   .section-shell {
     padding-inline: 2rem;
-    padding-top: 5.25rem;
-    padding-bottom: 5.25rem;
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+
+  .section-shell + .section-shell {
+    padding-top: 1.75rem;
+  }
+
+  .deferred-section {
+    content-visibility: visible;
+    contain-intrinsic-size: auto;
   }
 }
 
