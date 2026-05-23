@@ -55,7 +55,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="section-shell deferred-section">
-      <div className="grid items-start gap-6 lg:grid-cols-[0.88fr_1.12fr]">
+      <div className="grid items-start gap-6 lg:grid-cols-[0.82fr_1.18fr]">
         <Reveal>
           <div className="surface-card-strong p-6 sm:p-7">
             <SectionHeading
@@ -63,17 +63,6 @@ export function ContactSection() {
               title="Start with the business problem. We can shape the technical path from there."
               description="Use the form to open a prefilled email to the team, or contact them directly with the public company email listed below."
             />
-
-            <div className="mt-7 space-y-4">
-              {contactDetails.map((detail) => (
-                <div key={detail.label} className="surface-subtle p-5">
-                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-strong)]">
-                    {detail.label}
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-[color:var(--text-main)]">{detail.value}</p>
-                </div>
-              ))}
-            </div>
 
             <a href={`mailto:${siteMeta.contactEmail}`} className="contact-direct-link mt-6">
               <span className="icon-chip shrink-0">
@@ -94,6 +83,17 @@ export function ContactSection() {
               <p className="text-sm leading-7 text-[color:var(--text-muted)]">
                 Serving enterprise transformation conversations from Midlothian, Virginia.
               </p>
+            </div>
+
+            <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              {contactDetails.slice(0, 2).map((detail) => (
+                <div key={detail.label} className="surface-subtle p-5">
+                  <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-strong)]">
+                    {detail.label}
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[color:var(--text-main)]">{detail.value}</p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
@@ -180,6 +180,19 @@ export function ContactSection() {
           </form>
         </Reveal>
       </div>
+
+      <Reveal className="mt-6" delay={0.12}>
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+          {contactDetails.slice(2).map((detail) => (
+            <div key={detail.label} className="surface-subtle p-5">
+              <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[color:var(--accent-strong)]">
+                {detail.label}
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[color:var(--text-main)]">{detail.value}</p>
+            </div>
+          ))}
+        </div>
+      </Reveal>
     </section>
   );
 }
