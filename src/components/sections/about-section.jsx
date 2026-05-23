@@ -7,7 +7,7 @@ export function AboutSection() {
     <section id="about" className="section-shell deferred-section">
       <div className="grid items-start gap-6 lg:grid-cols-[0.92fr_1.08fr]">
         <Reveal>
-          <div className="surface-card h-full p-6 sm:p-7">
+          <div className="surface-card p-6 sm:p-7">
             <p className="section-eyebrow">Business Context</p>
             <h3 className="mt-4 font-display text-3xl font-semibold tracking-[-0.04em] text-[color:var(--text-main)]">
               Microsoft consulting rooted in real delivery experience
@@ -29,7 +29,7 @@ export function AboutSection() {
         </Reveal>
 
         <Reveal delay={0.06}>
-          <div className="glass-panel h-full p-6 sm:p-7">
+          <div className="glass-panel p-6 sm:p-7">
             <SectionHeading
               eyebrow="How We Work"
               title="The consulting approach starts with analysis, then moves into practical execution."

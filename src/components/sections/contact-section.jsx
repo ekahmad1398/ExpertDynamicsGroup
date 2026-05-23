@@ -57,7 +57,7 @@ export function ContactSection() {
     <section id="contact" className="section-shell deferred-section">
       <div className="grid items-start gap-6 lg:grid-cols-[0.88fr_1.12fr]">
         <Reveal>
-          <div className="surface-card-strong h-full p-6 sm:p-7">
+          <div className="surface-card-strong p-6 sm:p-7">
             <SectionHeading
               eyebrow="Contact"
               title="Start with the business problem. We can shape the technical path from there."

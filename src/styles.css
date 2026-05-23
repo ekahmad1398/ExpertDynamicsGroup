@@ -218,8 +218,8 @@ textarea {
 }
 
 .deferred-section {
-  content-visibility: auto;
-  contain-intrinsic-size: auto 720px;
+  content-visibility: visible;
+  contain-intrinsic-size: auto;
 }
 
 [data-reveal] {
@@ -258,10 +258,6 @@ textarea {
     padding-top: 1.75rem;
   }
 
-  .deferred-section {
-    content-visibility: visible;
-    contain-intrinsic-size: auto;
-  }
 }
 
 .nav-shell,
